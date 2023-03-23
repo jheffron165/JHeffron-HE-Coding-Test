@@ -1009,9 +1009,6 @@ GameObject:
   - component: {fileID: 1126812165}
   - component: {fileID: 1126812167}
   - component: {fileID: 1126812166}
-  - component: {fileID: 1126812168}
-  - component: {fileID: 1126812169}
-  - component: {fileID: 1126812170}
   m_Layer: 5
   m_Name: InteractableSwitch
   m_TagString: Untagged
@@ -1077,123 +1074,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126812164}
   m_CullTransparentMesh: 1
---- !u!114 &1126812168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126812164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72708953e0499e841a1d6536f1706a0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsOn: 0
-  SwitchPivot: {fileID: 1880958081}
-  OffEulerAngles: {x: 0, y: 0, z: -30}
-  OnEulerAngles: {x: 0, y: 0, z: 30}
-  TurnOffAfterSeconds: 3
-  onLightOn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1126812169}
-        m_TargetAssemblyTypeName: DragAndDropSwitch, Assembly-CSharp
-        m_MethodName: SetTemporarilyDisabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  onLightOff:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1126812169}
-        m_TargetAssemblyTypeName: DragAndDropSwitch, Assembly-CSharp
-        m_MethodName: SetTemporarilyDisabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1126812169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126812164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bedc4ff55f8b61340ba18a543d362e77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  verticalPixelsToRegisterDrag: 25
-  onSwitchActivated:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1126812168}
-        m_TargetAssemblyTypeName: InteractableSwitch, Assembly-CSharp
-        m_MethodName: SetLightOn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1126812170}
-        m_TargetAssemblyTypeName: WidgetInteractionCounter, Assembly-CSharp
-        m_MethodName: InteractWithWidget
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  interactable: 1
-  temporarilyDisabled: 0
---- !u!114 &1126812170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126812164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c1a1425fdf72941abc6e09456f27a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 1999305448}
-  actionOnDisabling:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1126812169}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1162218350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,7 +1634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedc4ff55f8b61340ba18a543d362e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalPixelsToRegisterDrag: 25
+  verticalPixelsToRegisterDrag: 10
   onSwitchActivated:
     m_PersistentCalls:
       m_Calls:

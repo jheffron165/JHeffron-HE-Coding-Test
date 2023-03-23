@@ -22,6 +22,24 @@ public class DragAndDropSwitch : MonoBehaviour, IBeginDragHandler, IDropHandler,
     public bool interactable = true;
     public bool temporarilyDisabled = false;
 
+    void Update()
+    {
+        if(Input.GetMouseButtonUp(0))
+        {
+            if(isDragging)
+            {
+                isDragging = false;
+                Vector2 dragEndPosition = Input.mousePosition;
+
+                if((dragEndPosition.y - dragStartPosition.y) > verticalPixelsToRegisterDrag)
+                {
+                    onSwitchActivated?.Invoke();
+                }
+            }
+        }
+    }
+
+
     //on starting a drag, cache the mouse position
     public void OnBeginDrag(PointerEventData eventData)
     {
